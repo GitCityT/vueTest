@@ -20,7 +20,18 @@ const routes = [
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/Home.vue'),
     meta: {
       title: '首页'
-    }
+    },
+    redirect: '/Welcome',
+    children: [
+      {
+        path: '/Welcome',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/Welcome.vue')
+      },
+      {
+        path: '/users',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/user/Users.vue')
+      }
+    ]
   }
 ]
 
